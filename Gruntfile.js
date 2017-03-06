@@ -145,16 +145,6 @@
                     }
                 }
             },
-            jshint: {
-                options: {
-                    reporter: require('jshint-stylish'),
-                    jshintrc: true
-                },
-                test: [
-                    'js/app/**/*.js',
-                    'Gruntfile.js'
-                ]
-            },
             bootlint: {
                 options: {
                     showallerrors: true,
@@ -236,7 +226,6 @@
         grunt.loadNpmTasks('grunt-contrib-copy');
         grunt.loadNpmTasks('grunt-contrib-cssmin');
         grunt.loadNpmTasks('grunt-contrib-htmlmin');
-        grunt.loadNpmTasks('grunt-contrib-jshint');
         grunt.loadNpmTasks('grunt-contrib-watch');
         grunt.loadNpmTasks('grunt-contrib-connect');
         grunt.loadNpmTasks('grunt-contrib-sass');
@@ -259,17 +248,6 @@
         ]);
 
         grunt.registerTask('markup', ['shell:snapshots','bootlint']);
-
-        grunt.registerTask('test', ['jshint']);
-
-        grunt.registerTask('mocha', [
-            'copy:chai',
-            'copy:mocha'
-        ]);
-
-        grunt.registerTask('test', [
-            'jshint'
-        ]);
 
     };
 
