@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h3>{{title}}</h3>
+</div>
+
+<p class="lead">
+  {{lead}}
+</p>
+
+<p>{{body}}</p>
+
+<form id="contactForm">
+  <fieldset>
+
+    <form data-toggle="validator" role="form">
+      <div class="form-group">
+        <label for="inputName" class="control-label">Name</label>
+        <input type="text" class="form-control" id="inputName" name="name" value="Nathan Hale">
+        <div class="help-block with-errors"></div>
+      </div>
+      <div class="form-group">
+        <label for="inputTelephone" class="control-label">Telephone</label>
+        <input type="text" class="form-control" id="inputTelephone" name="telephone" value="424-242-9323">
+        <div class="help-block with-errors"></div>
+      </div>
+      <div class="form-group">
+        <label for="inputEmail" class="control-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail" name="email" value="info@socktan.com">
+        <div class="help-block with-errors"></div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" id="submitContact">Submit</button>
+      </div>
+    </form>
+
+  </fieldset>
+</form>
