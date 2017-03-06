@@ -1,9 +1,8 @@
-/* http://tutorialzine.com/2012/06/quick-tip-fullscreen-backgrounds */
-
-html {
-    background: url('../img/spitfire.jpg') top center no-repeat;
+.main-content {
+  padding-top: 75px;
 }
 
-div.well {
+.custom-well {
     opacity: 0.9;
 }
+
