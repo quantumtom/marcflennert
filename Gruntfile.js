@@ -5,7 +5,7 @@
     module.exports = function (grunt) {
 
         var watchedFiles = [
-            'sass/**/*',
+            'css/**/*',
             'fonts/**/*',
             'img/**/*',
             'js/**/*',
@@ -14,22 +14,6 @@
             '*.js',
             '!dist'
         ];
-
-        var baseUrl = 'http://localhost:8000/';
-        var testPath = baseUrl + 'test.html';
-        var routesArr = ['about', 'contact', 'work'];
-
-        function getTestFiles() {
-            return routesArr.map(function(route) {
-                return 'dist/test/html/' + route + '.html';
-            });
-        }
-
-        function makeCommands() {
-            return routesArr.map(function(route) {
-                return 'phantomjs load_ajax.js http://localhost:5000/index.html#' + route + ' dist/test/html/' + route + '.html';
-            });
-        }
 
         /**
          * Grunt Tasks and Configurations
@@ -43,7 +27,6 @@
                         'img/**',
                         'fonts/**',
                         'js/**/*',
-                        'css/**/*',
                         'video/**/*'
                     ],
                     dest: 'dist'
@@ -104,13 +87,14 @@
                     ]
                 }
             },
-            sass: {
+            cssmin: {
+                options: {
+                    shorthandCompacting: false,
+                    roundingPrecision: -1
+                },
                 build: {
-                    options: {
-                        style: 'expanded'
-                    },
                     files: {
-                        'css/main.css': 'sass/main.scss'
+                        'dist/css/main.css': ['css/*.css']
                     }
                 }
             },
@@ -132,12 +116,7 @@
                     stoponwarning: false,
                     relaxerror: []
                 },
-                files: getTestFiles()
-            },
-            shell: {
-                snapshots: {
-                    command: makeCommands().join('&&')
-                }
+                files: 'index.html'
             },
             bump: {
                 options: {
@@ -180,7 +159,6 @@
         grunt.loadNpmTasks('grunt-contrib-cssmin');
         grunt.loadNpmTasks('grunt-contrib-htmlmin');
         grunt.loadNpmTasks('grunt-contrib-watch');
-        grunt.loadNpmTasks('grunt-contrib-sass');
         grunt.loadNpmTasks('grunt-shell');
         grunt.loadNpmTasks('grunt-bootlint');
         grunt.loadNpmTasks('grunt-bump');
@@ -193,12 +171,10 @@
 
         grunt.registerTask('build', [
             'clean',
-            'sass:build',
             'copy:build',
+            'cssmin:build',
             'htmlmin:build'
         ]);
-
-        grunt.registerTask('markup', ['shell:snapshots','bootlint']);
 
     };
 
