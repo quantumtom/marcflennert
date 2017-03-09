@@ -5,7 +5,8 @@
   "main": "dist/js/app.js",
   "scripts": {
     "test": "grunt test",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "grunt build"
   },
   "repository": {
     "type": "git",
