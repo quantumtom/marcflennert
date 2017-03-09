@@ -41,11 +41,10 @@
                     expand: true,
                     src: [
                         'img/**',
-                        'demo/**',
                         'fonts/**',
                         'js/**/*',
-                        'video/**/*',
-                        'uploads/**/*'
+                        'css/**/*',
+                        'video/**/*'
                     ],
                     dest: 'dist'
                 },
@@ -111,7 +110,7 @@
                         style: 'expanded'
                     },
                     files: {
-                        'dist/css/main.css': 'sass/main.scss'
+                        'css/main.css': 'sass/main.scss'
                     }
                 }
             },
@@ -194,9 +193,9 @@
 
         grunt.registerTask('build', [
             'clean',
+            'sass:build',
             'copy:build',
-            'htmlmin:build',
-            'sass:build'
+            'htmlmin:build'
         ]);
 
         grunt.registerTask('markup', ['shell:snapshots','bootlint']);
