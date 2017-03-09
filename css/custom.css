@@ -12,3 +12,7 @@ body {
     opacity: 0.9;
 }
 
+.video-title {
+    margin-top: 20px;
+    font-size: 17px;
+}
