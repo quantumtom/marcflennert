@@ -242,9 +242,7 @@
 
         grunt.registerTask('build', [
             'clean',
-            'copy:build',
-            'sass:build',
-            'htmlmin:build'
+            'copy:build'
         ]);
 
         grunt.registerTask('markup', ['shell:snapshots','bootlint']);
