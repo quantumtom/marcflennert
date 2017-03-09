@@ -4,9 +4,8 @@
   "description": "Website for Marc Flennert",
   "main": "dist/js/app.js",
   "scripts": {
-    "test": "grunt test",
-    "start": "node server.js",
-    "postinstall": "grunt build"
+    "install": "grunt build",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
