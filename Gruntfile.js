@@ -15,6 +15,22 @@
             '!dist'
         ];
 
+        var baseUrl = 'http://localhost:8000/';
+        var testPath = baseUrl + 'test.html';
+        var routesArr = ['about', 'contact', 'work'];
+
+        function getTestFiles() {
+            return routesArr.map(function(route) {
+                return 'dist/test/html/' + route + '.html';
+            });
+        }
+
+        function makeCommands() {
+            return routesArr.map(function(route) {
+                return 'phantomjs load_ajax.js http://localhost:5000/index.html#' + route + ' dist/test/html/' + route + '.html';
+            });
+        }
+
         /**
          * Grunt Tasks and Configurations
          */
