@@ -5,7 +5,6 @@
     module.exports = function (grunt) {
 
         var watchedFiles = [
-            'css/**/*',
             'sass/**/*',
             'fonts/**/*',
             'img/**/*',
@@ -15,21 +14,6 @@
             '*.js',
             '!dist'
         ];
-        var baseUrl = 'http://localhost:8000/';
-        var testPath = baseUrl + 'test.html';
-        var routesArr = ['about', 'contact', 'work'];
-
-        function getTestFiles() {
-            return routesArr.map(function(route) {
-                return 'dist/test/html/' + route + '.html';
-            });
-        }
-
-        function makeCommands() {
-            return routesArr.map(function(route) {
-                return 'phantomjs load_ajax.js http://localhost:5000/index.html#' + route + ' dist/test/html/' + route + '.html';
-            });
-        }
 
         /**
          * Grunt Tasks and Configurations
@@ -40,7 +24,6 @@
                 build: {
                     expand: true,
                     src: [
-                        '*.html',
                         'img/**',
                         'demo/**',
                         'fonts/**',
@@ -55,21 +38,11 @@
                     src: [
                         '*.html',
                         'img/**',
-                        'css/**',
                         'demo/**',
                         'fonts/**',
                         'js/**'
                     ],
                     dest: 'dist'
-                },
-                mocha: {
-                    expand: true,
-                    cwd: 'node_modules/mocha/',
-                    src: [
-                        'mocha.js',
-                        'mocha.css'
-                    ],
-                    dest: 'dist/test/'
                 },
                 test: {
                     expand: true,
@@ -80,14 +53,6 @@
                         'test.html'
                     ],
                     dest: 'dist'
-                },
-                chai: {
-                    expand: true,
-                    cwd: 'node_modules/chai/',
-                    src: [
-                        'chai.js'
-                    ],
-                    dest: 'dist/test'
                 },
                 /**
                  * Copies original source from src/js to build/js/src/js for source map debugging.
@@ -175,22 +140,6 @@
                     regExp: false
                 }
             },
-            mocha_phantomjs: {
-                all: {
-                    options: {
-                        reporter: 'nyan',
-                        urls: [testPath]
-                    }
-                }
-            },
-            connect: {
-                server: {
-                    options: {
-                        port: 8000,
-                        base: 'dist'
-                    }
-                }
-            },
             clean: {
                 dist: {
                     src: [
@@ -207,17 +156,6 @@
                     tasks: [
                         'default'
                     ]
-                },
-                mocha: {
-                    files: [
-                        'js/app/**/*',
-                        'test/**/*',
-                        'Gruntfile.js',
-                        'test.html'
-                    ],
-                    tasks: [
-                        'mocha'
-                    ]
                 }
             }
         });
@@ -227,9 +165,7 @@
         grunt.loadNpmTasks('grunt-contrib-cssmin');
         grunt.loadNpmTasks('grunt-contrib-htmlmin');
         grunt.loadNpmTasks('grunt-contrib-watch');
-        grunt.loadNpmTasks('grunt-contrib-connect');
         grunt.loadNpmTasks('grunt-contrib-sass');
-        grunt.loadNpmTasks('grunt-mocha-phantomjs');
         grunt.loadNpmTasks('grunt-shell');
         grunt.loadNpmTasks('grunt-bootlint');
         grunt.loadNpmTasks('grunt-bump');
@@ -242,6 +178,7 @@
 
         grunt.registerTask('build', [
             'clean',
+            'htmlmin:build',
             'copy:build'
         ]);
 
