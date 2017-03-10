@@ -1,5 +1,3 @@
-define([
-    'lib/ga'
-], function () {
+define([], function () {
 
 });

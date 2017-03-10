@@ -12,11 +12,6 @@ define(function () {
             // the jQuery file, relative to baseUrl.
             // Also, the path should NOT include
             // the '.js' file extension.
-            router:             'app/router',
-            models:             'app/models',
-            parts:              'app/parts',
-            views:              'app/views',
-            data:               'app/data',
             backbone:           'lib/backbone',
             bootstrap:          'lib/bootstrap',
             ga:                 'lib/ga',
@@ -27,8 +22,7 @@ define(function () {
             text:               'lib/text',
             twbs:               'lib/twbs',
             underscore:         'lib/underscore',
-            validator:          'lib/validator',
-            chai:               'test/chai'
+            validator:          'lib/validator'
         },
         shim: {
             backbone: {
