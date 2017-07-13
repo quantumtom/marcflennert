@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Website for Marc Flennert",
   "main": "dist/js/app.js",
+  "engines": {
+    "node": "6.11.1",
+    "npm": "4.0.5"
+  },
   "scripts": {
     "install": "grunt build",
     "start": "node server.js"
