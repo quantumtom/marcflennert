@@ -1,4 +1,3 @@
-const path = require('path');
 const merge = require('webpack-merge');
 const webpackConfig = require('./webpack.config');
 
@@ -11,7 +10,7 @@ module.exports = merge(webpackConfig, {
     output: {
         pathinfo: true,
         publicPath: '/',
-        library: 'example-dev-lib',
+        library: 'marcflennert-dev-lib',
         libraryTarget: 'umd',
         filename: '[name].js'
     }

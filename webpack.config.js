@@ -1,5 +1,4 @@
 const path = require('path');
-const exportPlugin = require('./exportPlugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -7,8 +6,7 @@ module.exports = {
     mode: 'development',
 
     entry: {
-        index: './src/index.js',
-        main: './src/main.js'
+        index: './src/index.js'
     },
     module: {
         rules: [
@@ -51,10 +49,9 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist/*']),
-        new exportPlugin(),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, './src/index.ejs'),
-            title: 'custom-script-example'
+            title: 'marcflennert'
         })
     ]
 };
