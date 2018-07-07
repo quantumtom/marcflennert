@@ -53,14 +53,14 @@
                     dest: 'dist'
                 },
                 /**
-                 * Copies original source from src/js to build/js/src/js for source map debugging.
+                 * Copies original source from public/js to build/js/public/js for source map debugging.
                  */
                 src: {
                     files: [
                         {
                             expand: true,
                             src: '*.js',
-                            dest: 'dist/js/src/js'
+                            dest: 'dist/js/public/js'
                         }
                     ]
                 },

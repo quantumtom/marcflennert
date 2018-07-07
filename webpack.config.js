@@ -1,12 +1,11 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
 
     entry: {
-        index: './src/index.js'
+        index: 'js/main.js'
     },
     module: {
         rules: [
@@ -43,14 +42,13 @@ module.exports = {
         ]
     },
     devServer: {
-        contentBase: path.join(__dirname, 'src'),
+        contentBase: path.join(__dirname, 'public'),
         compress: true,
         port: 9000
     },
     plugins: [
-        new CleanWebpackPlugin(['dist/*']),
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, './src/index.ejs'),
+            template: path.join(__dirname, './views/pages/index.ejs'),
             title: 'marcflennert'
         })
     ]
