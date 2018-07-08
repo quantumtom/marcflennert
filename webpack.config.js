@@ -5,7 +5,7 @@ module.exports = {
     mode: 'development',
 
     entry: {
-        index: 'js/main.js'
+        index: './public/js/main.js'
     },
     module: {
         rules: [
