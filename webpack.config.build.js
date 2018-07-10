@@ -15,7 +15,7 @@ module.exports = merge(webpackConfig, {
             name: 'marcflennert',
             automaticNameDelimiter: '-',
             chunks: 'all',
-            minChunks: 1,
+            minChunks: 2,
             runtimeChunk: true
         })
     ],
