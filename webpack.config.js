@@ -2,10 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
-
     entry: {
-        index: './public/js/main.js'
+        main: './public/js/main.js'
     },
     module: {
         rules: [
@@ -27,17 +25,6 @@ module.exports = {
                 use: [
                     'file-loader'
                 ]
-            },
-            {
-                test: /\.html$/,
-                use: [{
-                    loader: 'html-loader',
-                    options: {
-                        minimize: true,
-                        removeComments: false,
-                        collapseWhitespace: false
-                    }
-                }],
             }
         ]
     },
@@ -49,7 +36,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, './views/pages/index.ejs'),
-            title: 'marcflennert'
+            title: 'MarcFlennert'
         })
     ]
 };
