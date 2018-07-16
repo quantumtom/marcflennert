@@ -11,7 +11,7 @@ module.exports = merge(webpackConfig, {
     plugins: [
         new CleanWebpackPlugin(['dist/*']),
         new webpack.optimize.SplitChunksPlugin({
-            filename: 'index.js',
+            filename: 'main.js',
             name: 'marcflennert',
             automaticNameDelimiter: '-',
             chunks: 'all',
