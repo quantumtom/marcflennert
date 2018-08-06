@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development --hot --open --progress --config webpack.config.dev.js",
+    "prod": "cross-env NODE_ENV=prod webpack-dev-server --mode=development --hot --open --progress --config webpack.config.dev.js",
     "start": "node index.js",
     "build": "export NODE_ENV=production && webpack --mode=production --config webpack.config.build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
