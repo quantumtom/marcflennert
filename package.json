@@ -1,6 +1,6 @@
 {
   "name": "marcflennert",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Website for Marc Flennert",
   "main": "index.js",
   "engines": {
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development --hot --open --progress --config webpack.config.dev.js",
-    "prod": "cross-env NODE_ENV=prod webpack-dev-server --mode=development --hot --open --progress --config webpack.config.dev.js",
+    "prod": "cross-env NODE_ENV=prod webpack-dev-server --mode=production --hot --open --progress --config webpack.config.build.js",
     "start": "node index.js",
     "build": "export NODE_ENV=production && webpack --mode=production --config webpack.config.build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
