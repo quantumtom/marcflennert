@@ -36,7 +36,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, './views/pages/index.ejs'),
-            title: 'MarcFlennert'
+            title: 'Marc Flennert'
         })
     ]
 };
