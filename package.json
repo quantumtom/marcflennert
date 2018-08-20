@@ -8,10 +8,10 @@
     "npm": "4.0.5"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development --hot --open --progress --config webpack.config.dev.js",
-    "prod": "cross-env NODE_ENV=prod webpack-dev-server --mode=production --hot --open --progress --config webpack.config.build.js",
-    "start": "node index.js",
-    "build": "export NODE_ENV=production && webpack --mode=production --config webpack.config.build.js",
+    "local": "webpack-dev-server --mode=development --hot --open --progress --config webpack.config.dev.js --env=dev",
+    "build:dev": "webpack --mode=development --open --progress --config webpack.config.build.js",
+    "build:prod": "webpack --mode=production --config webpack.config.build.js",
+    "server": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
