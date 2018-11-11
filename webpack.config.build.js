@@ -24,7 +24,7 @@ module.exports = merge(webpackConfig, {
         path: path.resolve(__dirname, 'dist'),
         library: 'marcflennert-prod-lib',
         libraryTarget: 'amd',
-        publicPath: 'https://marcflennert.herokuapp.com/'
+        publicPath: 'https://www.prettyrare.net/'
     }
 
 });
