@@ -4,8 +4,8 @@
   "description": "Professional website for Marc Flennert",
   "main": "index.js",
   "engines": {
-    "node": "6.11.1",
-    "npm": "4.0.5"
+    "node": "v10.1.0",
+    "npm": "6.4.1"
   },
   "scripts": {
     "local": "webpack-dev-server --mode=development --hot --open --progress --config webpack.config.dev.js --env=dev",
@@ -29,9 +29,10 @@
     "popper.js": "^1.14.5"
   },
   "devDependencies": {
+    "acorn": "^6.0.4",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.1",
-    "eslint": "^5.8.0",
+    "eslint": "^5.9.0",
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
