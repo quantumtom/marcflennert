@@ -13,6 +13,12 @@ module.exports = merge(webpackConfig, {
         library: 'marcflennert-dev-lib',
         libraryTarget: 'umd',
         filename: '[name].js'
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, './views/pages/index.ejs'),
+            title: 'Marc Flennert'
+        })
+    ]
 
 });
