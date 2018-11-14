@@ -18,7 +18,7 @@ module.exports = merge(webpackConfig, {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, './views/pages/index.ejs'),
+            template: path.join(__dirname, 'views/pages/index.ejs'),
             title: 'Marc Flennert'
         })
     ]

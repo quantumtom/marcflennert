@@ -1,15 +1,24 @@
 const path = require('path');
 
 module.exports = {
-    entry: {
-        main: './public/js/main.js'
-    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     module: {
         rules: [
+            {
+                test: /\.ejs$/,
+                use: [
+                    {
+                        loader: "ejs-webpack-loader",
+                        options: {
+                            data: {title: "New Title", someVar:"hello world"},
+                            htmlmin: true
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.css$/,
                 use: [

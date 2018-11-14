@@ -1,11 +1,13 @@
-const path = require('path');
+const merge = require('webpack-merge');
+const webpackConfig = require('./webpack.config');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path');
 
-module.exports = {
+module.exports = merge(webpackConfig, {
     mode: 'development',
     entry: {
-        app: './public/js/main.js',
+        app: './public/js/main.js'
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -14,7 +16,15 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Output Management'
+            hash: true,
+            template: path.join(__dirname, 'views/pages/about.ejs'),
+            title: 'About Marc Flennert',
+            filename: 'about.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            template: path.join(__dirname, 'views/pages/index.ejs'),
+            title: 'Marc Flennert'
         })
     ],
     output: {
@@ -22,4 +32,4 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
     }
-};
+});
