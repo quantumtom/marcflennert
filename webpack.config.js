@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -31,16 +30,5 @@ module.exports = {
                 ]
             }
         ]
-    },
-    devServer: {
-        contentBase: path.join(__dirname, 'public'),
-        compress: true,
-        port: 9000
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, './views/pages/index.ejs'),
-            title: 'Marc Flennert'
-        })
-    ]
+    }
 };
