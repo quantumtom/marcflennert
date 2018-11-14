@@ -1,6 +1,6 @@
 {
   "name": "marcflennert",
-  "version": "1.3.1",
+  "version": "1.3.2-pre",
   "description": "Professional website for Marc Flennert",
   "main": "index.js",
   "engines": {
