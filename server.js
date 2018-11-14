@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 
 const app = express();
-const config = require('./webpack.config.dev.js');
+const config = require('./webpack.config.local.js');
 const compiler = webpack(config);
 
 // Tell express to use the webpack-dev-middleware and use the webpack.config.dev.js
