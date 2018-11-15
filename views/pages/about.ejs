@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <title>About Marc Flennert</title>
+    <title>Personal Bio - About Marc Flennert</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,13 +20,14 @@
 </head>
 <body style="background-color: #F6F6F6">
 
-<% include ../partials/navbar %>
+<% include ../partials/navbar.ejs %>
 
 <div class="container main-content">
     <div class="row">
-        <div class="col-md-12 col-xs-12">
-            <img src="/img/marcflennert01md.jpg" alt="Marc Flennert" class="img-responsive"/><br/>
-
+        <div class="col-md-3 col-xs-3">
+            <img src="/img/marcflennert01md.jpg" alt="Marc Flennert" class="img-responsive" height="188" width="250" style="height:188px; width:250px; display: inline-block" />
+        </div>
+        <div class="col-md-9 col-xs-9">
             <p>A lifelong photographer, Marc Flennert's passion is the practice of cinematography. With the
                 combination of his natural creativity and technical know how, he's able to infuse his
                 approach with a style of his own. Over the years he's gained vast...A lifelong photographer,
@@ -39,18 +40,7 @@
     </div>
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="copyright">
-                    <p>&copy;2018 Marc Flennert. All rights reserved.
-                        Los Angeles, California.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+<% include ../partials/footer.ejs %>
 
 </body>
 </html>
