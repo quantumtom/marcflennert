@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "acorn": "^6.0.4",
-    "bootlint": "^0.15.1",
     "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^1.0.1",
     "csv-loader": "^3.0.2",
