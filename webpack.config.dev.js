@@ -1,6 +1,7 @@
 const merge = require('webpack-merge');
 const webpackConfig = require('./webpack.config');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = merge(webpackConfig, {
@@ -17,9 +18,17 @@ module.exports = merge(webpackConfig, {
         filename: '[name].js'
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'views/pages/index.ejs'),
-            title: 'Marc Flennert'
+            hash: true,
+            template: path.join(__dirname, 'views/pages/about.ejs'),
+            title: 'About Marc Flennert',
+            filename: 'about.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            template: path.join(__dirname, 'views/pages/reel.ejs'),
+            title: 'Professional Work - By Marc Flennert'
         })
     ]
 

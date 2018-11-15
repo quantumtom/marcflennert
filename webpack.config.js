@@ -1,6 +1,9 @@
 const path = require('path');
 
 module.exports = {
+    entry: {
+        app: './public/js/main.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -13,7 +16,6 @@ module.exports = {
                     {
                         loader: "ejs-webpack-loader",
                         options: {
-                            data: {title: "New Title", someVar:"hello world"},
                             htmlmin: true
                         }
                     }
@@ -27,7 +29,18 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf|otf)$/,
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            emitFile: true
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: [
                     'file-loader'
                 ]

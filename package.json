@@ -9,7 +9,7 @@
   },
   "scripts": {
     "local": "webpack-dev-server --mode=development --hot --open --progress --config webpack.config.dev.js --env=dev",
-    "build:dev": "webpack --mode=development --open --progress --config webpack.config.build.js",
+    "build:dev": "webpack --mode=development --open --progress --config webpack.config.dev.js",
     "build:prod": "webpack --mode=production --progress --config webpack.config.build.js",
     "start": "node index.js",
     "server": "node server.js",

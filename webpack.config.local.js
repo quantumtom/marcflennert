@@ -6,9 +6,6 @@ const path = require('path');
 
 module.exports = merge(webpackConfig, {
     mode: 'development',
-    entry: {
-        app: './public/js/main.js'
-    },
     devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist'
@@ -23,7 +20,7 @@ module.exports = merge(webpackConfig, {
         }),
         new HtmlWebpackPlugin({
             hash: true,
-            template: path.join(__dirname, 'views/pages/index.ejs'),
+            template: path.join(__dirname, 'views/pages/reel.ejs'),
             title: 'Professional Work - By Marc Flennert'
         })
     ],
