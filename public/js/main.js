@@ -1,11 +1,11 @@
-const profile = require('../img/marcflennert01md.jpg');
-
 const $ = require('jquery');
 const popper = require('popper.js');
 const Bootstrap = require('bootstrap');
 
 define(function () {
     console.log('main.js loaded');
+
+    const profile = require('../img/marcflennert01md.jpg');
 
     const el = document.getElementById('profile');
 
