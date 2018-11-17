@@ -1,8 +1,21 @@
 const path = require('path');
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
     entry: {
         app: './public/js/main.js'
+    },
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                sourceMap: true // set to true if you want JS source maps
+            }),
+            new OptimizeCSSAssetsPlugin({})
+        ]
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -14,9 +27,10 @@ module.exports = {
                 test: /\.ejs$/,
                 use: [
                     {
-                        loader: "ejs-webpack-loader",
+                        loader: 'ejs-webpack-loader',
                         options: {
-                            htmlmin: true
+                            htmlmin: true,
+                            emitFile: true
                         }
                     }
                 ]
@@ -24,8 +38,8 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader',
-                    'css-loader'
+                    MiniCssExtractPlugin.loader,
+                    "css-loader"
                 ]
             },
             {
@@ -46,5 +60,11 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugin: [
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename: "[id].css"
+        })
+    ]
 };
