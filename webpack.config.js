@@ -4,10 +4,6 @@ module.exports = {
     entry: {
         app: './public/js/main.js'
     },
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
-    },
     module: {
         rules: [
             {

@@ -1,6 +1,6 @@
 const express = require('express');
 const PATH = require('path');
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 80;
 const app = express();
 
 app.engine('html', require('ejs').renderFile);
@@ -21,5 +21,5 @@ app.get('/about', function(req, res) {
 });
 
 app.listen(PORT, function () {
-    console.log('8080 is the magic port');
+    console.log(PORT + ' is the magic port');
 });

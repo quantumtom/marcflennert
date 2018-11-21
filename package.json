@@ -8,13 +8,9 @@
     "npm": "6.4.1"
   },
   "scripts": {
-    "serve:local": "webpack-dev-server --mode=development --hot --open --progress --config webpack.config.local.js --env=dev",
-    "build:dev": "webpack --mode=development --open --progress --config webpack.config.dev.js",
-    "build:prod": "webpack --mode=production --progress --config webpack.config.build.js",
-    "serve:dev": "node serve-dev.js",
-    "serve:prod": "node serve-prod.js",
-    "start": "node serve-prod.js",
-    "postinstall": "node serve-prod.js",
+    "local": "webpack-dev-server --mode=development --hot --open --progress --config webpack.config.local.js --env=dev",
+    "build": "webpack --mode=production --open --progress --config webpack.config.build.js",
+    "start": "node start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -38,6 +34,7 @@
     "csv-loader": "^3.0.2",
     "ejs-webpack-loader": "^2.2.2",
     "eslint": "^5.9.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.0.7",
