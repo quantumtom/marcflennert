@@ -11,6 +11,7 @@
     "local": "webpack-dev-server --mode=development --hot --open --progress --config webpack.config.local.js --env=dev",
     "build": "webpack --mode=production --open --progress --config webpack.config.build.js",
     "start": "node start.js",
+    "heroku-postbuild": "webpack --mode=production --open --progress --config webpack.config.build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
