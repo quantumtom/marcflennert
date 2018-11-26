@@ -6,6 +6,7 @@ const app = express();
 app.engine('html', require('ejs').renderFile);
 
 app.use(express.static(PATH.join(__dirname, 'dist')));
+app.use(express.static(PATH.join(__dirname + '/public/')));
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
