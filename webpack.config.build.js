@@ -13,7 +13,7 @@ module.exports = merge(webpackConfig, {
 
     output: {
         filename: '[name].js',
-        library: 'marcflennert-dev-lib',
+        library: 'marcflennert-lib',
         libraryTarget: 'umd',
         path: path.resolve(__dirname, 'dist'),
         pathinfo: true,
@@ -29,7 +29,7 @@ module.exports = merge(webpackConfig, {
         }),
         new HtmlWebpackPlugin({
             hash: true,
-            template: path.join(__dirname, 'views/pages/reel.ejs'),
+            template: path.join(__dirname, 'views/pages/work.ejs'),
             title: 'Professional Work - By Marc Flennert'
         }),
         new MiniCssExtractPlugin({
