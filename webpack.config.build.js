@@ -30,7 +30,8 @@ module.exports = merge(webpackConfig, {
         new HtmlWebpackPlugin({
             hash: true,
             template: path.join(__dirname, 'views/pages/work.ejs'),
-            title: 'Professional Work - By Marc Flennert'
+            title: 'Professional Work - By Marc Flennert',
+            filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output

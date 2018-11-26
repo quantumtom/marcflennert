@@ -16,11 +16,6 @@ app.get('/', function(req, res) {
     res.render('pages/work.ejs');
 });
 
-// "About" page
-app.get('/about', function(req, res) {
-    res.render('pages/about.ejs');
-});
-
 app.listen(PORT, function () {
     console.log(PORT + ' is the magic port');
 });
