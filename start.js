@@ -11,12 +11,12 @@ app.use(express.static(PATH.join(__dirname + '/public/')));
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
-// Reel page
+// "Work" page
 app.get('/', function(req, res) {
-    res.render('pages/reel.ejs');
+    res.render('pages/work.ejs');
 });
 
-// About page
+// "About" page
 app.get('/about', function(req, res) {
     res.render('pages/about.ejs');
 });
