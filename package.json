@@ -17,7 +17,7 @@
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",
     "local": "webpack-dev-server --mode=development --hot --open --progress --config webpack.config.js --env=dev",
-    "start": "node start.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
