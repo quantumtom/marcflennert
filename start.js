@@ -13,9 +13,9 @@ app.set('view engine', 'ejs');
 
 // "Work" page
 app.get('/', function(req, res) {
-    res.render('pages/work.ejs');
+  res.render('pages/index.ejs');
 });
 
-app.listen(PORT, function () {
-    console.log(PORT + ' is the magic port');
+app.listen(PORT, function() {
+  console.log(PORT + ' is the magic port');
 });
