@@ -3,6 +3,10 @@
   "description": "Professional website for Marc Flennert",
   "license": "UNLICENSED",
   "author": "cornyn@gmail.com",
+  "engines": {
+    "node": "v11.1.0",
+    "npm": "6.4.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/quantumtom/marcflennert.git"
@@ -12,11 +16,11 @@
   "scripts": {
     "builddev": "webpack --open --progress",
     "buildprod": "webpack --mode=production",
+    "start": "node --optimize_for_size --max_old_space_size=920 --gc_interval=100 server.js",
     "predeploy": "npm run build",
     "dev": "webpack-serve --open",
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",
-    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -25,7 +29,8 @@
     "express": "^4.16.4",
     "jquery": "^3.3.1",
     "path": "^0.12.7",
-    "popper.js": "^1.14.5"
+    "popper.js": "^1.14.5",
+    "throng": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.5",
@@ -72,10 +77,6 @@
     "webpack-merge": "^4.1.4",
     "webpack-serve": "^2.0.2",
     "xml-loader": "^1.2.1"
-  },
-  "engines": {
-    "node": "v10.1.0",
-    "npm": "6.4.1"
   },
   "lint-staged": {
     "package.json": [
