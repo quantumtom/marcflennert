@@ -17,7 +17,7 @@
     "build-dev": "NODE_ENV=dev webpack --mode=development --open --progress",
     "build": "NODE_ENV=production webpack",
     "start": "node --optimize_for_size --max_old_space_size=920 --gc_interval=100 server.js",
-    "predeploy": "npm run build",
+    "heroku-postbuild": "npm run build",
     "dev": "NODE_ENV=dev webpack-serve --open --mode=development",
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",
