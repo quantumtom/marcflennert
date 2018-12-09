@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const PreloadWebpackPlugin = require('preload-webpack-plugin');
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
 const IS_DEV = process.env.NODE_ENV === 'dev';
 
@@ -125,9 +125,11 @@ const config = {
       filename: IS_DEV ? 'css/[name].css' : 'css/[name].[contenthash].css',
       chunkFilename: IS_DEV ? 'css/[id].css' : 'css/[id].[hash].css'
     }),
-    // new PreloadWebpackPlugin({
-    //   include: 'initial'
-    // }),
+    new PreloadWebpackPlugin({
+      include: 'initial',
+      rel: 'prefetch',
+      as: 'script'
+    }),
     new webpack.HashedModuleIdsPlugin()
   ],
   devServer: {
