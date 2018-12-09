@@ -1,21 +1,29 @@
+const throng = require('throng');
+
+const WORKERS = process.env.WEB_CONCURRENCY || 1;
+
 const express = require('express');
 const PATH = require('path');
 const PORT = process.env.PORT || 80;
 const app = express();
 
-app.engine('html', require('ejs').renderFile);
+throng(
+  {
+    workers: WORKERS,
+    lifetime: Infinity
+  },
+  start
+);
 
-app.use(express.static(PATH.join(__dirname, 'dist')));
-app.use(express.static(PATH.join(__dirname + '/public/')));
+function start() {
+  app.engine('html', require('ejs').renderFile);
 
-// set the view engine to ejs
-app.set('view engine', 'ejs');
+  app.use(express.static(PATH.join(__dirname, 'dist')));
 
-// "Work" page
-app.get('/', function(req, res) {
-  res.render('pages/index.ejs');
-});
+  // set the view engine to ejs
+  app.set('view engine', 'ejs');
 
-app.listen(PORT, function() {
-  console.log(PORT + ' is the magic port');
-});
+  app.listen(PORT, function() {
+    console.log(PORT + ' is the magic port');
+  });
+}
