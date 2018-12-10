@@ -10,9 +10,11 @@ if (el) {
   const img = document.createElement('img');
   img.src = profile;
   img.classList.add('img-fluid');
-  img.classList.add('img-thumbnail');
+  // img.classList.add('img-thumbnail');
   img.classList.add('rounded');
-  img.classList.add('float-left');
+  // img.classList.add('float-left');
+  img.classList.add('align-self-start');
+  img.classList.add('mr-3');
   img.alt = 'Marc Flennert';
 
   el.appendChild(img);
