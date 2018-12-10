@@ -12,10 +12,7 @@ if (el) {
   img.classList.add('img-fluid');
   img.classList.add('img-thumbnail');
   img.classList.add('rounded');
-  img.classList.add('mx-auto');
-  img.classList.add('d-block');
-  // img.height = 500;
-  // img.width = 375;
+  img.classList.add('float-left');
   img.alt = 'Marc Flennert';
 
   el.appendChild(img);
