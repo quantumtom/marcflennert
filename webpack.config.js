@@ -68,18 +68,6 @@ const config = {
             }
           }
         ]
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: {
-              attrs: [':data-src'],
-              minimize: true
-            }
-          }
-        ]
       }
     ]
   },
@@ -99,13 +87,17 @@ const config = {
     new HtmlWebPackPlugin({
       hash: true,
       template: path.join(__dirname, 'src/work.ejs'),
-      title: 'Professional Work - By Marc Flennert',
+      title: 'Commercials by Marc Flennert',
       filename: 'index.html',
       favicon: './public/icon.ico',
       minify: !IS_DEV && {
         collapseWhitespace: true,
-        preserveLineBreaks: true,
+        preserveLineBreaks: false,
         removeComments: true
+      },
+      meta: {
+        description: 'Commercials by Marc Flennert',
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
       }
     }),
     new HtmlWebPackPlugin({
@@ -116,8 +108,12 @@ const config = {
       favicon: './public/icon.ico',
       minify: !IS_DEV && {
         collapseWhitespace: true,
-        preserveLineBreaks: true,
+        preserveLineBreaks: false,
         removeComments: true
+      },
+      meta: {
+        description: 'About Marc Flennert',
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
       }
     }),
     new MiniCssExtractPlugin({
@@ -134,17 +130,6 @@ const config = {
     new ManifestPlugin(),
     new webpack.HashedModuleIdsPlugin()
   ],
-  devServer: {
-    contentBase: path.join(__dirname, 'src'),
-    watchContentBase: true,
-    compress: true,
-    port: 8080,
-    open: true,
-    host: 'localhost',
-    index: './src/index.ejs',
-    inline: true,
-    hot: true
-  },
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {
