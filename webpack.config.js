@@ -9,10 +9,12 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 
 const IS_DEV = process.env.NODE_ENV === 'dev';
 
-console.log('process.env.NODE_ENV is ' + process.env.NODE_ENV);
+let mode = IS_DEV ? 'development' : 'production';
+
+console.log('Running Webpack in "' + mode + '" mode.');
 
 const config = {
-  mode: IS_DEV ? 'development' : 'production',
+  mode: mode,
   devtool: IS_DEV ? 'eval' : 'source-map',
   entry: './src/js/index.js',
   output: {
