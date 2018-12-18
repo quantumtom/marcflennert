@@ -15,7 +15,7 @@
   "main": "server.js",
   "scripts": {
     "build-dev": "NODE_ENV=dev webpack --mode=development --open --progress",
-    "build": "NODE_ENV=production webpack",
+    "build": "NODE_ENV=production webpack --progress",
     "start": "node --optimize_for_size --max_old_space_size=920 --gc_interval=100 server.js",
     "heroku-postbuild": "npm run build",
     "dev": "NODE_ENV=dev webpack-serve --open",
