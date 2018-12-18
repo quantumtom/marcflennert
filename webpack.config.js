@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 
 const IS_DEV = process.env.NODE_ENV === 'dev';
 
@@ -84,6 +85,10 @@ const config = {
       {
         from: './public',
         to: 'public'
+      },
+      {
+        from: './sw.js',
+        to: 'sw.js'
       }
     ]),
     new HtmlWebPackPlugin({
@@ -130,6 +135,9 @@ const config = {
       as: 'script'
     }),
     new ManifestPlugin(),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.join(__dirname, 'sw.js')
+    }),
     new webpack.HashedModuleIdsPlugin()
   ],
   optimization: {
