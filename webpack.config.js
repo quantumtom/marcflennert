@@ -4,7 +4,6 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 
@@ -128,11 +127,6 @@ const config = {
       // both options are optional
       filename: IS_DEV ? 'css/[name].css' : 'css/[name].[contenthash].css',
       chunkFilename: IS_DEV ? 'css/[id].css' : 'css/[id].[hash].css'
-    }),
-    new PreloadWebpackPlugin({
-      include: 'initial',
-      rel: 'prefetch',
-      as: 'script'
     }),
     new ManifestPlugin(),
     new ServiceWorkerWebpackPlugin({
