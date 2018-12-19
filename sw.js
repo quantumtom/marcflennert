@@ -6,4 +6,6 @@ if ('serviceWorker' in navigator) {
   console.log('Service Worker Registered via serviceworker-webpack-plugin');
 
   console.dir(registration);
+} else {
+  console.log('Service Worker not Registered via serviceworker-webpack-plugin');
 }
