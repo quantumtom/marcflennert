@@ -50,6 +50,10 @@ const config = {
         ]
       },
       {
+        test: /\.(png|woff|woff2|eot|ttf)$/,
+        loader: 'url-loader?limit=100000'
+      },
+      {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
           {
