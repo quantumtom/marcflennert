@@ -2,10 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
-const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 
 const IS_DEV = process.env.NODE_ENV === 'dev';
 
@@ -80,16 +77,6 @@ const config = {
       jQuery: 'jquery',
       'windows.jQuery': 'jquery'
     }),
-    new CopyWebpackPlugin([
-      {
-        from: './public',
-        to: 'public'
-      },
-      {
-        from: './sw.js',
-        to: 'sw.js'
-      }
-    ]),
     new HtmlWebPackPlugin({
       hash: true,
       template: path.join(__dirname, 'src/work.ejs'),
@@ -127,10 +114,6 @@ const config = {
       // both options are optional
       filename: IS_DEV ? 'css/[name].css' : 'css/[name].[contenthash].css',
       chunkFilename: IS_DEV ? 'css/[id].css' : 'css/[id].[hash].css'
-    }),
-    new ManifestPlugin(),
-    new ServiceWorkerWebpackPlugin({
-      entry: path.join(__dirname, 'sw.js')
     }),
     new webpack.HashedModuleIdsPlugin()
   ],
