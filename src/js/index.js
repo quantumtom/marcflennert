@@ -2,20 +2,10 @@ import 'bootstrap';
 
 import '../scss/index.scss';
 
-import profile from '../img/portrait-medium.jpg';
+import profile from '../img/portrait-small.jpg';
 
-const el = document.getElementById('profile');
+const img = document.getElementById('profile');
 
-if (el) {
-  const img = document.createElement('img');
+if (img) {
   img.src = profile;
-  img.classList.add('img-fluid');
-  // img.classList.add('img-thumbnail');
-  img.classList.add('rounded');
-  // img.classList.add('float-left');
-  img.classList.add('align-self-start');
-  img.classList.add('mr-3');
-  img.alt = 'Marc Flennert';
-
-  el.appendChild(img);
 }
