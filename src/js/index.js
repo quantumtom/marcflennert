@@ -1,8 +1,9 @@
 import 'bootstrap';
 
-import '../scss/index.scss';
+import '../../src/scss/index.scss';
+// import '../../src/css/fonts.css';
 
-import profile from '../img/portrait-small.jpg';
+import profile from '../../src/img/portrait-medium.jpg';
 
 const img = document.getElementById('profile');
 

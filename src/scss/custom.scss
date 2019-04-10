@@ -1,8 +1,8 @@
 // Your custom CSS
 @font-face {
   font-family: 'MonospaceTypewriter';
-  src:  url('./MonospaceTypewriter.ttf') format('ttf'),
-        url('./MonospaceTypewriter.woff') format('woff');
+  src:  url('MonospaceTypewriter.ttf') format('ttf'),
+  url('MonospaceTypewriter.woff') format('woff');
 }
 
 body {
