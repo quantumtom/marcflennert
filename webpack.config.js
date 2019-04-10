@@ -112,8 +112,8 @@ const config = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: IS_DEV ? 'css/[name].css' : 'css/[name].[contenthash].css',
-      chunkFilename: IS_DEV ? 'css/[id].css' : 'css/[id].[hash].css'
+      filename: IS_DEV ? 'css/[name].css' : '[name].[contenthash].css',
+      chunkFilename: IS_DEV ? 'css/[id].css' : '[id].[hash].css'
     }),
     new webpack.HashedModuleIdsPlugin()
   ],
