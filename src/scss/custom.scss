@@ -10,7 +10,9 @@ body {
 }
 
 .copyright {
-  font-size: 50%;
+  color: #999;
+  font-size: 80%;
+  font-weight: normal;
 }
 
 .poster {
@@ -18,29 +20,40 @@ body {
 }
 
 .bodycopy {
-  font-size: 70%;
+  color: #666;
+}
+
+.video-title {
+  color: #777;
+  font-weight: normal;
 }
 
 // Responsive Typography
 
 html {
-  font-size: 0.5rem;
+  font-size: 0.6rem;
 }
 
 @include media-breakpoint-up(sm) {
   html {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 }
 
 @include media-breakpoint-up(md) {
   html {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }
 
 @include media-breakpoint-up(lg) {
   html {
     font-size: 1.0rem;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  html {
+    font-size: 1.1rem;
   }
 }
