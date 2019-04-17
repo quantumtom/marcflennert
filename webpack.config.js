@@ -95,6 +95,22 @@ const config = {
     }),
     new HtmlWebPackPlugin({
       hash: true,
+      template: path.join(__dirname, 'src/shorts.ejs'),
+      title: 'Shorts by Marc Flennert',
+      filename: 'shorts.html',
+      favicon: './public/icon.ico',
+      minify: !IS_DEV && {
+        collapseWhitespace: true,
+        preserveLineBreaks: false,
+        removeComments: true
+      },
+      meta: {
+        description: 'Shorts by Marc Flennert',
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+      }
+    }),
+    new HtmlWebPackPlugin({
+      hash: true,
       template: path.join(__dirname, 'src/about.ejs'),
       title: 'About Marc Flennert',
       filename: 'about.html',
