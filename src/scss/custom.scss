@@ -1,12 +1,11 @@
 // Your custom CSS
 @font-face {
-  font-family: 'MonospaceTypewriter';
-  src:  url('MonospaceTypewriter.ttf') format('ttf'),
-  url('MonospaceTypewriter.woff') format('woff');
+  font-family: 'Courier New';
+  src:  url('CourierNew.ttf') format('ttf');
 }
 
 body {
-  font-family: 'MonospaceTypewriter', sans-serif !important;
+  font-family: 'Courier New', sans-serif !important;
 }
 
 .copyright {
