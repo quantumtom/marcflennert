@@ -8,8 +8,12 @@ body {
   font-family: 'Courier New', sans-serif !important;
 }
 
+.nav-link {
+  font-weight: bold;
+}
+
 .copyright {
-  color: #999;
+  color: #000000;
   font-size: 80%;
   font-weight: normal;
 }
@@ -19,12 +23,11 @@ body {
 }
 
 .bodycopy {
-  color: #666;
+  color: #000000;
 }
 
 .video-title {
-  color: #777;
-  font-weight: normal;
+  color: #000000;
 }
 
 // Responsive Typography
