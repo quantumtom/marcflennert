@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/quantumtom/marcflennert.git"
   },
-  "version": "1.4.0",
+  "version": "1.5.0",
   "main": "server.js",
   "scripts": {
     "build-dev": "NODE_ENV=dev webpack --mode=development --progress",
