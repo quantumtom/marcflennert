@@ -1,22 +1,21 @@
 // Your custom CSS
-@font-face {
-  font-family: 'Courier New';
-  src:  url('CourierNew.ttf') format('ttf');
-}
+//@font-face {
+//  font-family: 'Courier New';
+//  src:  url('CourierNew.ttf') format('ttf');
+//}
 
 body {
-  font-family: 'Courier New', sans-serif !important;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 125%;
 }
 
 .nav-link {
-  font-size: 110%;
-  font-weight: bold;
+  //font-size: 110%;
 }
 
 .copyright {
-  color: #000000;
-  font-size: 80%;
+  color: #666;
+  font-size: 50%;
   font-weight: normal;
 }
 
@@ -24,12 +23,9 @@ body {
 
 }
 
-.bodycopy {
-  color: #000000;
-}
-
 .video-title {
-  color: #000000;
+  color: #666;
+  font-size: 77%;
   margin-bottom: 5rem !important;
 }
 
@@ -38,8 +34,8 @@ body {
 }
 
 .navbar-toggler-icon {
-  width: 3.5em !important;
-  height: 3.5em !important;
+  width: 2.0em !important;
+  height: 2.0em !important;
 }
 
 // Responsive Typography
