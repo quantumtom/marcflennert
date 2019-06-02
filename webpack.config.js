@@ -82,7 +82,7 @@ const config = {
       template: path.join(__dirname, 'src/work.ejs'),
       title: 'Commercials by Marc Flennert',
       filename: 'index.html',
-      favicon: './public/icon.ico',
+      favicon: './public/favicon/favicon.ico',
       minify: !IS_DEV && {
         collapseWhitespace: true,
         preserveLineBreaks: false,
@@ -98,7 +98,7 @@ const config = {
       template: path.join(__dirname, 'src/shorts.ejs'),
       title: 'Shorts by Marc Flennert',
       filename: 'shorts.html',
-      favicon: './public/icon.ico',
+      favicon: './public/favicon/favicon.ico',
       minify: !IS_DEV && {
         collapseWhitespace: true,
         preserveLineBreaks: false,
@@ -114,7 +114,7 @@ const config = {
       template: path.join(__dirname, 'src/about.ejs'),
       title: 'About Marc Flennert',
       filename: 'about.html',
-      favicon: './public/icon.ico',
+      favicon: './public/favicon/favicon.ico',
       minify: !IS_DEV && {
         collapseWhitespace: true,
         preserveLineBreaks: false,
