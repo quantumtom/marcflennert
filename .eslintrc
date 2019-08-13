@@ -19,5 +19,5 @@
     ],
     "no-console": "off"
   },
-  "plugins": ["jquery", "babel", "prettier"]
+  "plugins": ["jquery", "babel", "prettier", "eslint-plugin-jquery"]
 }
