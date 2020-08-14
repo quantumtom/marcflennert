@@ -1,8 +1,10 @@
 const path = require('path');
+const { join } = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const outputPath = join(process.cwd(), '/dist');
 
 const IS_DEV = process.env.NODE_ENV === 'dev';
 
@@ -16,7 +18,7 @@ const config = {
   entry: './src/js/index.js',
   output: {
     filename: 'js/[name].[hash].js',
-    path: path.resolve(__dirname, 'dist')
+    path: outputPath
   },
   module: {
     rules: [
@@ -71,7 +73,8 @@ const config = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new Serve({ static: outputPath }),
+    new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
