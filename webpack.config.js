@@ -16,11 +16,8 @@ console.log('Running Webpack in "' + mode + '" mode.');
 const config = {
   mode: mode,
   devtool: IS_DEV ? 'eval' : 'source-map',
-  watch: true, // ← important: webpack and the server will continue to run in watch mode
-  entry: [
-    './src/js/index.js',
-    'webpack-plugin-serve/client' // ← important: this is required, where the magic happens in the browser
-  ],
+  watch: true,
+  entry: ['./src/js/index.js', 'webpack-plugin-serve/client'],
   output: {
     filename: 'js/[name].[hash].js',
     path: outputPath
